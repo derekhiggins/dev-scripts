@@ -51,7 +51,7 @@ fi
 # Install ansible, other packages are installed via
 # vm-setup/install-package-playbook.yml
 # Note recent ansible needs python >= 3.8 so we install 3.9 here
-sudo dnf -y install python39
+sudo dnf -y install python39 ipmitool
 sudo alternatives --set python /usr/bin/python3.9
 sudo alternatives --set python3 /usr/bin/python3.9
 sudo update-alternatives --install /usr/bin/pip3 pip3 /usr/bin/pip3.9 1
