@@ -168,6 +168,9 @@ if ! id $USER | grep -q libvirt; then
   sudo usermod -a -G "libvirt" $USER
 fi
 
+sudo systemctl restart NetworkManager-dispatcher
+sudo systemctl restart NetworkManager
+
 # This method, defined in common.sh, will either ensure sockets are up'n'running
 # for CS9 and RHEL9, or restart the libvirtd.service for other DISTRO
 manage_libvirtd

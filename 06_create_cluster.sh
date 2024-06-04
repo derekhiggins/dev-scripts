@@ -19,6 +19,8 @@ if [[ ! -z "$INSTALLER_PROXY" ]]; then
   export NO_PROXY=${NO_PROXY}
 fi
 
+sudo systemctl restart libvirtd
+
 # Call openshift-installer to deploy the bootstrap node and masters
 create_cluster ${OCP_DIR}
 
